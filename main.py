@@ -10,11 +10,13 @@ def execute(file):
             for line in f:
                 cmd = line.rstrip()
                 name = cmd.split("(")[0]
-                arg = cmd.split("(")[1][:-1]
+                arg_str = cmd.split("(")[1][:-1]
+                # Parse arguments: split by comma, strip spaces and quotes
+                args = [s.strip().strip('"') for s in arg_str.split(",")]
                 if name in commands:
-                    globals()[name](arg)
+                    globals()[name](*args)
                 else:
-                    print("lkjdhg")
+                    pass
 
     except Exception as e:
         print(f"Error occurred while executing {file}: {e}")
@@ -27,7 +29,6 @@ if __name__ == "__main__":
         execute(args.file)
     else:
         execute("run.ashell")
-
 
 
 

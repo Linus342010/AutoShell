@@ -1,1 +1,1 @@
-press("ctrl", "f")
+press("ctrl", "shift", "esc")
