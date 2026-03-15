@@ -19,3 +19,4 @@ def press(*key):
             print(key)
     except Exception as e:
         print(f"Error occured in pyautogui: {e}")
+ 
