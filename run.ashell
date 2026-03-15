@@ -1,1 +1,2 @@
+press("ctrl", "shift", "esc")
 mouse_click()
