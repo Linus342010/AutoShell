@@ -1,11 +1,8 @@
->>> pyautogui.write('Hello world!', interval=0.25)  # type with quarter-second pause in between each key
->>> pyautogui.press('esc')     # Press the Esc key. All key names are in pyautogui.KEY_NAMES
+pyautogui key names in pyautogui.KEY_NAMEs
 
 >>> with pyautogui.hold('shift'):  # Press the Shift key down and hold it.
         pyautogui.press(['left', 'left', 'left', 'left'])  # Press the left arrow key 4 times.
 >>> # Shift key is released automatically.
-
->>> pyautogui.hotkey('ctrl', 'c') # Press the Ctrl-C hotkey combination.
 
 eventually add mouse()
 
