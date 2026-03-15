@@ -7,7 +7,7 @@
 
 >>> pyautogui.hotkey('ctrl', 'c') # Press the Ctrl-C hotkey combination.
 
-
+eventually add mouse()
 
 
 
