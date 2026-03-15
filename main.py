@@ -2,7 +2,7 @@ import os
 from commands import *
 import argparse
 
-commands = ("open_app", "press")
+commands = ("open_app", "press", "mouse_click")
 
 def execute(file):
     try:

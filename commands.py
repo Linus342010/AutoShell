@@ -20,3 +20,5 @@ def press(*key):
     except Exception as e:
         print(f"Error occured in pyautogui: {e}")
  
+def mouse_click():
+    gui.click()
