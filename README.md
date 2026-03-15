@@ -123,5 +123,5 @@ Add contact links or GitHub profile links here.
 
 
 Support
-
+ 
 For support or to report bugs, open an issue in the project's GitHub repository or contact the authors via their GitHub profiles.
