@@ -24,6 +24,7 @@ Features
 - Custom, minimal scripting language for Windows automation
 - File-based scripts executed line-by-line (current)
 - Intended: drag-and-drop GUI for non-coders (planned)
+- Intended: Documentation of all commands (planned)
 - Intended: packaging as a Windows shortcut/app for easy distribution (planned)
 
 
@@ -67,14 +68,12 @@ Example script (example_script.ashell):
 
 ```ashell
 # Open Notepad
-open "notepad.exe"
+open_app("notepad.exe)
 # Wait 1 second
 sleep 1
-# Type some text
-type "Hello from ashell"
-# Save and exit (pseudo-commands; implement as available)
-press "ctrl+s"
-press "alt+f4"
+# Press keys or hotkeys
+press("a")
+press("ctrl", "shift", "esc")
 ```
 
 Run it with:
