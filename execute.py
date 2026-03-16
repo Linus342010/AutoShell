@@ -2,6 +2,7 @@ import os
 from commands import *
 import argparse
 
+# Allowed commands
 commands = ("open_app", "press", "mouse_click")
 
 def execute(file):
@@ -22,13 +23,13 @@ def execute(file):
         print(f"Error occurred while executing {file}: {e}")
     
 if __name__ == "__main__":
-    parse = argparse.ArgumentParser(description="Execute commands")
-    parse.add_argument("-f", "--file", help="File to execute")
-    args = parse.parse_args()
-    if args.file:
-        execute(args.file)
-    else:
-        execute("run.ashell")
+    #parse = argparse.ArgumentParser(description="Execute commands")
+    #parse.add_argument("-f", "--file", help="File to execute")
+    #args = parse.parse_args()
+    #if args.file:
+        #execute(args.file)
+    #else:
+    execute("run.ashell") # eingerückt
 
 
 
