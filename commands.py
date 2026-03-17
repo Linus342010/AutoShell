@@ -1,5 +1,6 @@
 import os
 import pyautogui as gui
+import log
 
 def open_app(app):
     try:
@@ -12,13 +13,13 @@ def press(*key):
         if len(key) > 1:
 
             gui.hotkey(key)
-            print(key)
+            
         else:
             
             gui.press(key)
-            print(key)
+            
     except Exception as e:
-        print(f"Error occured in pyautogui: {e}")
+        log.error(f"Error occured in pyautogui: {e}")
  
-def mouse_click():
-    gui.click()
+def mouse_click(*number):
+    gui.click(*number)

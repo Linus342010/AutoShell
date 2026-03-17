@@ -1,6 +1,7 @@
 import os
 from commands import *
 import argparse
+import log
 
 # Allowed commands
 commands = ("open_app", "press", "mouse_click")
@@ -13,15 +14,21 @@ def execute(file):
                 name = cmd.split("(")[0]
                 arg_str = cmd.split("(")[1][:-1]
                 # Parse arguments: split by comma, strip spaces and quotes
-                args = [s.strip().strip('"') for s in arg_str.split(",")]
+                args = [s.strip().strip('"') for s in arg_str.split(",") if s.strip().strip('"')]
                 if name in commands:
-                    globals()[name](*args)
+                    log.info(f"Executing command: {name} with arguments: {args}")
+                    if len(args) == 0:
+                        globals()[name]()
+                        log.success("executed command without arguments")
+                    else:
+                        globals()[name](*args)
+                        log.success("executed command with arguments")
                 else:
-                    pass
+                    log.error(f"Unknown command: {name}")
 
     except Exception as e:
-        print(f"Error occurred while executing {file}: {e}")
-    
+        log.error(f"Error occurred while executing {file}: {e}")
+
 if __name__ == "__main__":
     #parse = argparse.ArgumentParser(description="Execute commands")
     #parse.add_argument("-f", "--file", help="File to execute")
@@ -30,8 +37,6 @@ if __name__ == "__main__":
         #execute(args.file)
     #else:
     execute("run.ashell") # eingerückt
-
-
 
 
 

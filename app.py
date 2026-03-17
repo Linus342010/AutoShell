@@ -1,6 +1,7 @@
 import customtkinter as ctk
 from tkinter import filedialog
 import subprocess
+import log
 
 app = ctk.CTk()
 app.title("Autoshell")
