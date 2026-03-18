@@ -1,7 +1,7 @@
 import customtkinter as ctk
 from tkinter import filedialog
 import subprocess
-import log
+import src.log
 
 app = ctk.CTk()
 app.title("Autoshell")
@@ -13,7 +13,8 @@ def create_script():
     path = filedialog.asksaveasfile(title="Create Script",defaultextension=".ashell",filetypes=[("Autoshell Script", "*.ashell")])
 
     if path:
-        open(path, "a").close()
+        with open(path, "a"):
+            pass
         subprocess.run(["notepad.exe", path.name])
 
 def open_script():

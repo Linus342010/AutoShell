@@ -1,7 +1,7 @@
 import os
-from commands import *
+from src.commands import *
 import argparse
-import log
+import src.log as log
 
 # Allowed commands
 commands = ("open_app", "press", "mouse_click")

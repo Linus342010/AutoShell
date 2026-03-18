@@ -1,18 +1,19 @@
 import os
 import pyautogui as gui
-import log
+import src.log as log
+import subprocess
 
 def open_app(app):
     try:
-        os.startfile(app)
+        subprocess.run(app)
     except Exception as e:
-        print(f"Error opening {app}: {e}")
+        log.error(f"Error opening {app}: {e}")
 
 def press(*key):
     try:
         if len(key) > 1:
 
-            gui.hotkey(key)
+            gui.hotkey(*key)
             
         else:
             
