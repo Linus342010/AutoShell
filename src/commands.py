@@ -1,11 +1,10 @@
 import os
 import pyautogui as gui
 import src.log as log
-import subprocess
 
 def open_app(app):
     try:
-        subprocess.run(app)
+        os.startfile(app)
     except Exception as e:
         log.error(f"Error opening {app}: {e}")
 
