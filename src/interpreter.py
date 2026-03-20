@@ -1,11 +1,15 @@
 import re
-
 from src.commands import *
-import src.log
+import src.log as log
 
 COMMANDS = {
     "open_app": open_app,
-
+    "press": press,
+    "equal": Logic().equal,
+    "bigger": Logic().bigger,
+    "smaller": Logic().smaller,
+    "not_equal": Logic().not_equal
+    
 }
 
 def interpret(line: str, line_number: int):

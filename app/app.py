@@ -54,8 +54,9 @@ title.pack(pady=10)
 info = ctk.CTkLabel(right_frame, text="Autoshell is a powerful scripting tool that allows you to automate tasks.", wraplength=800, justify="left")
 info.pack(pady=10)
 
-github_link = ctk.CTkButton(right_frame, text="Visit GitHub Repository", command=open_github)
+github_link = ctk.CTkLabel(right_frame, text="Visit GitHub Repository", font=ctk.CTkFont(underline=True), cursor="hand2")
 github_link.pack(pady=10)
+github_link.bind("<Button-1>", lambda e: open_github())
 
 
 app.mainloop()
