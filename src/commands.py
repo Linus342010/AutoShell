@@ -23,27 +23,3 @@ def press(*key):
     except Exception as e:
         log.error(f"Error occured in pyautogui: {e}")
  
-class Logic:
-    def __init__(self):
-        pass
-
-    def equal(self, a, b):
-        if a == b:
-            return True
-        else:
-            return False
-    def bigger(self, a, b):
-        if a > b:
-            return True
-        else:
-            return False
-    def smaller(self, a, b):
-        if a < b:
-            return True
-        else:
-            return False
-    def not_equal(self, a, b):
-        if a != b:
-            return True
-        else:
-            return False

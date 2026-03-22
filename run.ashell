@@ -1,3 +1,2 @@
 press("ctrl", "shift", "esc")
 open_app("notepad.exe")
-equal(self, "1", "2")

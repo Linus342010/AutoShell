@@ -5,43 +5,57 @@ import src.log as log
 COMMANDS = {
     "open_app": open_app,
     "press": press,
-    "equal": Logic().equal,
-    "bigger": Logic().bigger,
-    "smaller": Logic().smaller,
-    "not_equal": Logic().not_equal
-    
 }
+
+COMMAND_PATTERN = re.compile(r'^(\w+)\((.*)\)$')
+
+
+def parse_args(arg_string):
+    if not arg_string.strip():
+        return []
+
+    args = []
+    parts = re.split(r',\s*', arg_string)
+
+    for part in parts:
+        part = part.strip()
+
+        # String
+        if (part.startswith('"') and part.endswith('"')) or (part.startswith("'") and part.endswith("'")):
+            args.append(part[1:-1])
+
+        # Zahl
+        elif part.isdigit():
+            args.append(int(part))
+
+        else:
+            args.append(part)
+
+    return args
+
 
 def interpret(line: str, line_number: int):
     line = line.strip()
 
-    COMMAND_PATTERN = re.compile(r'^(\w+)\(\s*["\'](.+?)["\']\s*\)\s*$')
-
     if not line or line.startswith("#"):
-        log.info("Skip empty line or comment")
         return
-    
-    command = COMMAND_PATTERN.match(line)
-    if not command:
+
+    match = COMMAND_PATTERN.match(line)
+
+    if not match:
         log.error(f"Syntax error on line {line_number}: {line}")
         return
 
-    name = command.group(1)
-    arg = command.group(2)
+    name = match.group(1)
+    arg_string = match.group(2)
 
     if name not in COMMANDS:
         log.error(f"Unknown command on line {line_number}: {name}")
         return
-    
-    COMMANDS[name](arg)
 
+    args = parse_args(arg_string)
 
-def praser(file: str):
     try:
-        with open(file, "r") as f:
-            for line_number, line in enumerate(f, start=1):
-                interpret(line, line_number)
+        COMMANDS[name](*args)
     except Exception as e:
-        log.error(f"Error occurred while parsing {file}: {e}")
-
-
+        log.error(f"Error on line {line_number}: {e}")
