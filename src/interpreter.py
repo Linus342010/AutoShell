@@ -5,6 +5,7 @@ import src.log as log
 COMMANDS = {
     "open_app": open_app,
     "press": press,
+    "close_app": close_app
 }
 
 COMMAND_PATTERN = re.compile(r'^(\w+)\((.*)\)$')
