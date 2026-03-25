@@ -56,7 +56,8 @@ Root: HKA; Subkey: "Software\Classes\{#MyAppAssocExt}\OpenWithProgids"; ValueTyp
 Root: HKA; Subkey: "Software\Classes\{#MyAppAssocKey}"; ValueType: string; ValueName: ""; ValueData: "{#MyAppAssocName}"; Flags: uninsdeletekey
 Root: HKA; Subkey: "Software\Classes\{#MyAppAssocKey}\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: "{app}\{#MyAppExeName},0"
 Root: HKA; Subkey: "Software\Classes\{#MyAppAssocKey}\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\{#MyAppExeName}"" ""%1"""
-
+Root: HKCR; Subkey: ".ashell"; ValueType: string; ValueName: ""; ValueData: "AutoShell.Script"; Flags: uninsdeletekey
+Root: HKCR; Subkey: "AutoShell.Script\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\AutoShell.exe"" ""%1"""
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 
