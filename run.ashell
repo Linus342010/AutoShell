@@ -1,2 +1,0 @@
-press("ctrl", "shift", "esc")
-close_app("notepad.exe")
