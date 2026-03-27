@@ -8,7 +8,7 @@ COMMANDS = {
     "close_app": close_app,
     "open_url": open_url,
     "open_file": open_file,
-    "open_in_explorer": open_in_explorer,
+    "open_file": open_file,
     "show_in_explorer": show_in_explorer
 
 }

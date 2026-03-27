@@ -53,18 +53,18 @@ def open_file(file):
     except Exception as e:
         log.error(f"Error opening file: {e}")
 
-def open_in_explorer(path):
-    log.info(f"Opening in explorer: {path}")
-    try:
-        subprocess.Popen(['explorer', '/select,', path])
-        log.success(f"Successfully opened in explorer: {path}")
-    except Exception as e:
-        log.error(f"Error opening in explorer: {e}")
-
 def show_in_explorer(path):
     log.info(f"Showing in explorer: {path}")
     try:
-        subprocess.Popen(['explorer', path])
+        subprocess.Popen(['explorer', '/select,', path])
         log.success(f"Successfully showed in explorer: {path}")
     except Exception as e:
-        log.error(f"Error showing in explorer: {e}")
+        log.error(f"Error opening in explorer: {e}")
+
+def open_file(path):
+    log.info(f"Opening file: {path}")
+    try:
+        subprocess.Popen(['explorer', path])
+        log.success(f"Successfully opened in explorer: {path}")
+    except Exception as e:
+        log.error(f"Error opening in explorer: {e}")
