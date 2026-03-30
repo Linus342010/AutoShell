@@ -5,6 +5,9 @@ class window(QMainWindow):
     def __init__(self):
         super().__init__()
 
+        central = QWidget()
+        self.setCentralWidget(central)
+
         self.ListWidgetLeft = QListWidget()
         self.ListWidgetRight = QListWidget()
 
@@ -22,12 +25,12 @@ class window(QMainWindow):
         l1 = QListWidgetItem("Command 1")
         l2 = QListWidgetItem("Command 2")
 
-        self.ListWidgetLeft.insertItem(1, l1)
-        self.ListWidgetLeft.insertItem(2, l2)
+        self.ListWidgetLeft.addItem(l1)
+        self.ListWidgetLeft.addItem(l2)
 
 
         self.setWindowTitle("AutoShell Drag&Drop Builder")
-        self.setLayout(self.hboxlayout)
+        central.setLayout(self.hboxlayout)
         self.show()
         
 app = QApplication(sys.argv)
