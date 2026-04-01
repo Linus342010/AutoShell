@@ -11,7 +11,7 @@ class window(QMainWindow):
         self.ListWidgetLeft = QListWidget()
         self.ListWidgetRight = QListWidget()
 
-        self.ListWidgetLeft.setAcceptDrops(True)
+        self.ListWidgetLeft.setAcceptDrops(False)
         self.ListWidgetLeft.setDragEnabled(True)
         self.ListWidgetRight.setAcceptDrops(True)
         self.ListWidgetRight.setDragEnabled(True)
