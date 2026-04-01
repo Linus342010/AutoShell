@@ -26,3 +26,6 @@ name = cmd.split("(")[0]
                     globals()[name](arg)
                 else:
                     print("lkjdhg")
+
+
+Relativer Commands bezug + GUI Erstellung von eigenen commands mit Python Ausführung etc.
