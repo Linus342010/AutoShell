@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QApplication, QWidget, QListWidget, QHBoxLayout, QListWidgetItem, QMainWindow
+from PyQt6.QtWidgets import QApplication, QWidget, QListWidget, QHBoxLayout, QListWidgetItem, QMainWindow
 import sys
 
 class window(QMainWindow):
