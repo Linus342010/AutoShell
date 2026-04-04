@@ -68,3 +68,11 @@ def open_file(path):
         log.success(f"Successfully opened in explorer: {path}")
     except Exception as e:
         log.error(f"Error opening in explorer: {e}")
+
+def print_text(*args):
+
+    try:
+        message = " ".join(str(arg) for arg in args)
+        print(message)
+    except Exception as e:
+        log.error(f"Error printing: {e}")

@@ -9,8 +9,8 @@ COMMANDS = {
     "open_url": open_url,
     "open_file": open_file,
     "open_file": open_file,
-    "show_in_explorer": show_in_explorer
-
+    "show_in_explorer": show_in_explorer,
+    "print": print_text,
 }
 
 COMMAND_PATTERN = re.compile(r'^(\w+)\((.*)\)$')
@@ -45,6 +45,8 @@ def interpret(line: str, line_number: int):
 
     if not line or line.startswith("#"):
         return
+
+
 
     match = COMMAND_PATTERN.match(line)
 
