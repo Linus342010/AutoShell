@@ -1,3 +1,4 @@
 pyautogui
 customtkinter
 colorama
+PyQt6
