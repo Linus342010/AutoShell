@@ -1,5 +1,8 @@
 import os
-import pyautogui as gui
+try:
+    import pyautogui as gui
+except Exception as e:
+    pass
 import src.log as log
 import subprocess
 import webbrowser
